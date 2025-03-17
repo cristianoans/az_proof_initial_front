@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# Dashboard de Pedidos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação React desenvolvida como parte de um teste de contratação, demonstrando habilidades em desenvolvimento frontend, integração com APIs e otimização de performance.
 
-Currently, two official plugins are available:
+Trata-se de um **Dashboard de Pedidos** que exibe um resumo de métricas (totais de pedidos, vendas e ticket médio) e uma tabela paginada com informações detalhadas de pedidos, como ID, status, cliente e valores. O objetivo foi criar uma interface funcional, estilizada e otimizada, com foco em usabilidade e eficiência.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades Principais
 
-## Expanding the ESLint configuration
+- **Resumo de Totais**: Exibe cards com quantidade de pedidos, vendas e ticket médio, atualizados dinamicamente.
+- **Tabela de Pedidos**: Lista pedidos com colunas configuráveis (ID, data, cliente, status, etc.), incluindo formatações de moeda e data.
+- **Paginação**: Permite navegar entre páginas e ajustar a quantidade de linhas exibidas por página (6, 10, 20, 50).
+- **Otimização**: Inclui memoização (`React.memo`) e pré-processamento de dados para melhorar a performance ao manipular grandes quantidades de linhas.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Como Usar
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone <URL_DO_REPOSITORIO>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Acesse o diretório do projeto:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+cd <NOME_DO_DIRETORIO>
 ```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+### Configuração
+
+Certifique-se de que o serviço de API (`fetchDashboardData` em `services/api.ts`) esteja configurado e acessível. O endpoint deve retornar os dados no formato esperado pelo tipo `DashboardData` (totais, paginação e pedidos).
+
+### Execução
+
+Inicie a aplicação:
+
+```bash
+npm run dev
+```
+
+Acesse o dashboard em [http://localhost:5173](http://localhost:5173)  no navegador.
+
+## Uso
+
+- **Visualizar Resumo**: Os cards na parte superior mostram as métricas totais automaticamente ao carregar.
+- **Explorar Pedidos**: Use a tabela para ver os detalhes dos pedidos. Navegue entre páginas com os controles de paginação.
+- **Ajustar Linhas**: Selecione o número de linhas por página no menu dropdown para personalizar a visualização.
+
+## Otimizações Implementadas
+
+- **Memoização**: O componente `DashboardTable` usa `React.memo` para evitar rerenderizações desnecessárias.
+- **Pré-processamento**: Formatações (data, moeda, traduções) são feitas antes da renderização da tabela, reduzindo o impacto na performance.
+
+---
+
