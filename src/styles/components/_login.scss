@@ -1,0 +1,52 @@
+.login-container {
+    background: $bg-primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .col {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        border: 0;
+        width: 360px;
+
+        .btn {
+            background: $bg-tertiary-color;
+            color: $secondary-color;
+            border: none;
+            font-weight: 700;
+
+            &:hover {
+                background: $quaternary-color;
+            }
+        }
+
+        form {
+
+            .form-label,
+            a {
+                color: $tertiary-color;
+            }
+
+            .form-control {
+                border-radius: $border-radius;
+            }
+
+
+
+        }
+
+    }
+
+    .banner {
+
+        background: url("/src/assets/img_login.svg") lightgray 50% / cover no-repeat;
+
+    }
+}

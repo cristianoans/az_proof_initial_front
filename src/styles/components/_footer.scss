@@ -1,0 +1,19 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background: $bg-primary-color;
+
+    a {
+        color: $primary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .text-muted {
+        color: lighten($primary-color, 40%) !important;
+    }
+}

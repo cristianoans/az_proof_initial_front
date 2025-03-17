@@ -1,0 +1,18 @@
+// Importar a fonte Nunito Sans
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+// Importar variáveis globais
+@import 'variables';
+
+// Importar estilos globais
+@import 'global';
+
+// Importar estilos dos componentes
+@import 'components/header';
+@import 'components/footer';
+@import 'components/sidebar';
+@import 'components/totalsSummary';
+@import 'components/dashboardTable';
+@import 'components/paginationControls';
+@import 'components/login';
+@import 'pages/dashboard';

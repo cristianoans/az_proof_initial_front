@@ -1,0 +1,28 @@
+.sidebar {
+    box-shadow: $shadow-right;
+    background-color: $bg-primary-color;
+    min-height: 100vh; // Altura mínima igual à viewport
+    height: auto;
+
+    .nav-item {
+        background-color: $bg-tertiary-color;
+        border-radius: $border-radius;
+        width: 218px;
+
+        &.active {
+            background: $bg-tertiary-color;
+            color: $secondary-color;
+        }
+
+        &:hover {
+            background: $quaternary-color;
+        }
+    }
+
+    .nav-link {
+        text-align: center;
+        color: $secondary-color;
+
+
+    }
+}

@@ -1,0 +1,21 @@
+.totals-summary {
+    .card {
+        border-radius: $border-radius;
+        box-shadow: $shadow-down;
+        border: 0;
+        padding: 8px 8px;
+        font-size: 19px;
+        color: $primary-color;
+
+        .card-img-top {
+            width: 48px;
+            height: 48px;
+        }
+
+        .card-text {
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: 0%;
+        }
+    }
+}

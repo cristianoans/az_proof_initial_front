@@ -1,0 +1,70 @@
+.pagination-controls {
+    ul {
+        margin: 0 !important;
+    }
+
+    .pagination {
+
+        .btn-navigation {
+            .page-link {
+                color: $tertiary-color !important;
+                font-size: 25px !important;
+
+                &:hover {
+                    background-color: transparent !important;
+                    color: $tertiary-color !important;
+                }
+                &:focus-visible {
+                    outline: none;
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .page-item {
+            .page-link {
+                border-radius: 50%;
+                background-color: transparent;
+                margin: 0 2px;
+                border: 0;
+                color: $primary-color;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: $tertiary-color;
+                    color: $secondary-color;
+                    border: 0;
+                }
+
+                &:focus-visible {
+                    outline: none;
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            &.active .page-link {
+                background-color: $tertiary-color;
+                color: $secondary-color;
+                border: 0;
+            }
+
+            &.disabled .page-link {
+                color: #ccc;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .form-group {
+        .form-select {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    }
+}
